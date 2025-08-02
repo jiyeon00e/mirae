@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사고 위치 - 울산 해양 기름 유출 재난 대응 플랫폼</title>
+    <link rel="stylesheet" href="incident.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-image"></div>
+    
+    <div class="overlay">
+        
+        <header>
+            <span class="menu-icon" onclick="toggleNav()">&#9776;</span>
+        </header>
+
+        <nav id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+            <a href="main.html">메인</a>
+            <a href="response-method.html">대응 방법</a>
+        </nav>
+
+        <div class="map-container-wrapper">
+            <div class="map-box">
+                <div id="map1" class="map-api-content"></div>
+                <div class="map-label">사고 위치</div>
+            </div>
+            <div class="map-box">
+                <div id="map2" class="map-api-content"></div>
+                <div class="map-label">예측 확산 경로</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2ad4b4f5190779b2d8933031d7eb31b7&autoload=false"></script>
+    <script>
+        function toggleNav() {
+            var sidenav = document.getElementById("mySidenav");
+            sidenav.style.width = sidenav.style.width === "250px" ? "0" : "250px";
+        }
+
+        kakao.maps.load(function() {
+            // 첫 번째 지도 (사고 위치)
+            var mapContainer1 = document.getElementById('map1');
+            var mapOptions1 = {
+                center: new kakao.maps.LatLng(35.5384, 129.3114), // 울산 중심 좌표 예시
+                level: 8
+            };
+            var map1 = new kakao.maps.Map(mapContainer1, mapOptions1);
+
+            // 두 번째 지도 (예측 확산 경로)
+            var mapContainer2 = document.getElementById('map2');
+            var mapOptions2 = {
+                center: new kakao.maps.LatLng(35.5384, 129.3114), // 울산 중심 좌표 예시
+                level: 8
+            };
+            var map2 = new kakao.maps.Map(mapContainer2, mapOptions2);
+
+            // 여기에 마커나 폴리라인을 추가하는 코드를 작성할 수 있습니다.
+            // 예를 들어, 사고 위치 마커 추가
+            var markerPosition = new kakao.maps.LatLng(35.51, 129.35);
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+            marker.setMap(map1);
+        });
+    </script>
+
+</body>
+</html>

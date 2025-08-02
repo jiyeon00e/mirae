@@ -1,0 +1,110 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+.background-image {
+    background-image: url('page.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #9ab2d4; /* main.css의 햄버거 메뉴 아이콘 색상 */
+}
+/* 사이드바 디자인을 main.css와 동일하게 수정 */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    /* main.css와 동일하게 text-align 제거 */
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px; /* main.css와 동일하게 패딩 설정 */
+    text-decoration: none;
+    font-size: 25px;
+    color: #9ab2d4;
+    display: block;
+    transition: 0.3s;
+    /* main.css와 동일하게 text-align 제거 */
+}
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #9ab2d4;
+}
+/* 나머지 incident.css의 스타일은 그대로 유지 */
+.map-container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+.map-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+}
+.map-api-content {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.map-label {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 1.5em;
+    color: black;
+}

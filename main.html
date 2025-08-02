@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>울산 해양 기름 유출 재난 대응 플랫폼</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-image"></div>
+    
+    <div class="overlay">
+        
+        <span class="menu-icon" onclick="toggleNav()">&#9776;</span>
+        
+        <nav id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+            <a href="incident.html">사고 위치</a>
+            <a href="response-method.html">대응 방법</a>
+        </nav>
+
+        <main class="main-content">
+            <h1>대충 대응 플랫폼 이름</h1>
+        </main>
+    </div>
+
+    <script>
+        function toggleNav() {
+            var sidenav = document.getElementById("mySidenav");
+            sidenav.style.width = sidenav.style.width === "250px" ? "0" : "250px";
+        }
+    </script>
+</body>
+</html>
